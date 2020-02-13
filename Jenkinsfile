@@ -4,7 +4,7 @@ pipeline {
   agent any
   stages {
     stage('Load') {
-        code = load github_token.groovy”
+        def code = load("github_token.groovy")
     }
     stage('test groovy script') {
       steps {
