@@ -1,3 +1,4 @@
+#!/usr/bin/env groovy
 import org.jenkinsci.plugins.GithubAccessTokenProperty
 import hudson.model.User
 import hudson.model.*
