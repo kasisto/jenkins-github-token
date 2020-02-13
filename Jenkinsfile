@@ -8,10 +8,12 @@ pipeline {
         sh 'echo testing script'
         script {
             def code = load("github_token.groovy")
-            code.github_token()
+            def userId = build.getCause(Cause.UserIdCause).getUserId()
+            userId()
+            // code.github_token()
         }
         }
       }
     }
-  }
+}
 
