@@ -1,4 +1,7 @@
-
+import org.jenkinsci.plugins.GithubAccessTokenProperty
+import hudson.model.User
+import hudson.model.*
+import jenkins.security.*
 
 pipeline {
   agent any
