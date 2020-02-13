@@ -1,4 +1,4 @@
-def code = load("github_token.groovy")
+
 
 pipeline {
   agent any
@@ -7,6 +7,7 @@ pipeline {
       steps {
         sh 'echo testing script'
         script {
+            def code = load("github_token.groovy")
             code.github_token()
         }
         }
