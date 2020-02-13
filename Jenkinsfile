@@ -1,5 +1,3 @@
-def code
-
 pipeline {
   agent any
   stages {
