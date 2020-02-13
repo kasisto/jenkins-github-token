@@ -3,10 +3,12 @@ def code
 pipeline {
   agent any
   stages {
-    stage('build user') {
-      steps {
+    stage('Load') {
         code = load github_token.groovy”
-        sh "echo first pipeline run"
+    }
+    stage('test groovy script') {
+      steps {
+        code.github_token()
         }
       }
     }
