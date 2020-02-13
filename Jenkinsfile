@@ -5,7 +5,10 @@ pipeline {
   stages {
     stage('test groovy script') {
       steps {
-        code.github_token()
+        sh 'echo testing script'
+        script {
+            code.github_token()
+        }
         }
       }
     }
