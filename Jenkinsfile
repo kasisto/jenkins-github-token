@@ -11,7 +11,7 @@ pipeline {
         sh 'echo testing script'
         script {
             // def code = load("github_token.groovy")
-            def userId = build.getCause(Cause.UserIdCause).getUserId()
+            def userId = currentBuild.rawBuild.getCause(Cause.UserIdCause).getUserId()
             userId()
             // code.github_token()
         }
