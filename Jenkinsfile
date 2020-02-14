@@ -9,9 +9,10 @@ pipeline {
               def userId = env.BUILD_USER_ID //"${BUILD_USER_ID}"
               def code = load("github_token.groovy")
               def token = code.github_token(userId)
+              env.userId = userId
               env.token = token
             }
-          sh "curl -u gizabutler:${token} https://api.github.com/user"
+          sh "curl -u ${userId}:${token} https://api.github.com/user"
           }
         }
       }
