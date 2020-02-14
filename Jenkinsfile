@@ -1,8 +1,3 @@
-import org.jenkinsci.plugins.GithubAccessTokenProperty
-import hudson.model.User
-import hudson.model.*
-import jenkins.security.*
-
 pipeline {
   agent any
   stages {
@@ -10,10 +5,8 @@ pipeline {
       steps {
         sh 'echo testing script'
         script {
-            // def code = load("github_token.groovy")
-            def userId = currentBuild.rawBuild.getCause(Cause.UserIdCause).getUserId()
-            userId()
-            // code.github_token()
+            def code = load("github_token.groovy")
+            code.github_token()
         }
         }
       }
