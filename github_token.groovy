@@ -3,8 +3,7 @@ import org.jenkinsci.plugins.GithubAccessTokenProperty
 import hudson.model.User
 
 
-def github_token() {
-    userId =  "${BUILD_USER_ID}"
+def github_token(userId) {
     User u = User.get(userId)
     def token = u.getProperty(GithubAccessTokenProperty.class).getAccessToken()
     return token
