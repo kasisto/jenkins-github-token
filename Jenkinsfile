@@ -16,6 +16,7 @@ pipeline {
               set +x
               curl -u ${userId}:${token} https://api.github.com/user"
               set -x
+          '''
           }
         }
       }
