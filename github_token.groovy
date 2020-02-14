@@ -4,7 +4,7 @@ import hudson.model.User
 
 
 def github_token() {
-    userId = 'gizabutler' //build.getCause(Cause.UserIdCause).getUserId()
+    userId =  build.getCause(Cause.UserIdCause).getUserId()
     User u = User.get(userId)
     def token = u.getProperty(GithubAccessTokenProperty.class).getAccessToken()
     return token
