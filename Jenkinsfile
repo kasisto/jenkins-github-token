@@ -4,7 +4,7 @@ pipeline {
     stage('build user') {
       steps {
         wrap([$class: 'BuildUser']) {
-          sh 'echo "${BUILD_USER_ID}"'
+          userId = env.BUILD_USER_ID
         }
       }
     }
