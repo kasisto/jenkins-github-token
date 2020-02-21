@@ -2,6 +2,11 @@ pipeline {
   agent any
   stages {
     stage('test groovy script') {
+      agent {
+              docker {
+                  image 'gizabutler/jenkins-centos-agent:latest'
+              }
+          }
       steps {
         sh 'echo testing script'
         wrap([$class: 'BuildUser']) {
